@@ -1,38 +1,124 @@
-.App {
+body {
+  background-color: #DADADA;
+}
+
+.main-heading {
+  font-family: 'Indie Flower', cursive;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: 
+   "image sidebar"
+   "slider sidebar";
+   height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.image {
+  text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 15px;
+  display: flex;
+}
+
+.input-imgText {
   color: white;
+  background-color: transparent;
+  align-items: stretch;
+}
+.uploaded-img {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  width: 70%;
+
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar {
+  background-color: #CCCCFF;
+  padding: 5px;
+  border: black solid;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.sidebar-items-btn {
+  margin-top: 10px;
+  padding: 12px;
+  background-color: transparent;
+  border: none;
+  width: 80%;
+  border-top: blueviolet solid;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 150ms;
+}
+.sidebar-items-btn:hover {
+  background-color: #971ddd63;
+  border-radius: 10px;
+}
+.active {
+  background-color: rgba(250, 0, 250, 0.356);
+  border-radius: 5px;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.slider-container {
+  grid-area: "slider";
+  padding: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  
+}
+
+.slider {
+  width: 100% !important;
+  cursor: pointer !important;
+  
+}
+
+@media (max-width: 500px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+     "image"
+     "slider"
+     "sidebar";
+     width: 100vw;
   }
-  to {
-    transform: rotate(360deg);
+
+  .sidebar {
+    background-color: #CCCCFF;
+    padding: 5px;
+    margin: 8px;
+    border: none;
+   
+  }
+  .uploaded-img {
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* background-position: top center;
+    background-size: contain; */
+    background-repeat: no-repeat;
+    background-color: #fff;
   }
 }
